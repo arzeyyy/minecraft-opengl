@@ -143,12 +143,10 @@ void Game::run()
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(m_window.m_handle))
     {
-
         // clear
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        //glDrawArrays(GL_TRIANGLES, 0, 3);
 
         glActiveTexture(GL_TEXTURE0);
         m_texture.bind();
@@ -156,7 +154,7 @@ void Game::run()
         test.SetTexture(m_texture);
 
         m_shader.use();
-        test.Draw(&m_shader);
+
   
 
 
@@ -181,6 +179,7 @@ void Game::run()
         m_vao.bind();
         glDrawArrays(GL_TRIANGLES, 0, 36);
 
+        test.Draw(&m_shader);
 
         // swap
         glfwSwapBuffers(m_window.m_handle);

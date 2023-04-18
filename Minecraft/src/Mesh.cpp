@@ -68,14 +68,6 @@ void Mesh::Draw(Engine::Shader *shader)
 {
     UpdateUniforms(shader);
     shader->use();
-
-    // textures
-    //for (unsigned int i = 0; i < m_textures.size(); i++)
-    //{
-    //    shader.setInt(m_textures[i].m_name, m_textures[i].m_id);
-    //    glActiveTexture(GL_TEXTURE + i);
-    //    m_textures[i].bind();
-    //}
         
     // draw
     glBindVertexArray(VAO);
@@ -121,7 +113,7 @@ void Mesh::InitTransform()
 
 void Mesh::UpdateUniforms(Engine::Shader *shader)
 {
-    shader->setMat4("modelMatrix", m_modelMatrix);
+    shader->setMat4("model", m_modelMatrix);
 }
 
 
