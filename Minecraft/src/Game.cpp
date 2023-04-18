@@ -108,29 +108,29 @@ void Game::run()
    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };*/
-    Cube cube;
-    Mesh test(cube.vertices, cube.indices);
+
 
     m_vbo.create();
     m_vao.create();
     m_ebo.create();
 
+    Cube cube;
+
+
     m_vao.bind();
     m_vbo.bind(GL_ARRAY_BUFFER, &cube.vertices[0], cube.vertices.size() * sizeof(Vertex));
-
 
 
     Engine::Shader m_shader("shaders/6.3.coordinate_systems.vs", "shaders/6.3.coordinate_systems.fs");
     m_shader.use(); // activate/use the shader before setting uniforms!
 
 
-    //cube.Init();
-
-
-
     Engine::Texture m_texture("assets/textures/block/grass_block_side.png", "grass_block", GL_TEXTURE_2D);
     if (!m_texture.load())
         std::cout << "failed to load a texture" << m_texture.m_path << std::endl;
+
+    Mesh test(cube.vertices, cube.indices);
+    test.SetTexture(m_texture);
 
     //Mesh cube(vertices, indices);
 
@@ -151,7 +151,7 @@ void Game::run()
         glActiveTexture(GL_TEXTURE0);
         m_texture.bind();
 
-        test.SetTexture(m_texture);
+   
 
         m_shader.use();
 
