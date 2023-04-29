@@ -19,6 +19,11 @@ Engine::Shader::Shader(const char *vertexPath, const char *fragmentPath)
         vShaderFile.open(vertexPath);
         fShaderFile.open(fragmentPath);
 
+        if(!vShaderFile.is_open())
+            std::cout << "ERROR::SHADER::VERTEX_SHADER_NOT_SUCCESSFULLY_OPEN: " << std::endl;
+        if (!fShaderFile.is_open())
+            std::cout << "ERROR::SHADER::FRAGMENT_SHADER_NOT_SUCCESSFULLY_OPEN: " << std::endl;
+
         std::stringstream vShaderStream, fShaderStream;
 
         // read file's buffer contents into streams
@@ -161,46 +166,3 @@ void Engine::Shader::checkCompileErrors(unsigned int shader, std::string type)
 }
 
 
-
-//
-//unsigned int Engine::Shader::compile(unsigned int type, const std::string &src)
-//{
-//	ID = glCreateShader(type);
-//	const char* _src = &src[0];	// beginning of data
-//	glShaderSource(ID, 1, &_src, nullptr);
-//	glCompileShader(ID);
-//
-//	//check shader status
-//	int  success;
-//	char infoLog[512];
-//	glGetShaderiv(ID, GL_COMPILE_STATUS, &success);
-//	if (!success)
-//	{
-//		glGetShaderInfoLog(ID, 512, NULL, infoLog);
-//		std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-//	}
-//
-//	return ID;
-//}
-//
-//void Engine::Shader::destroy()
-//{
-//	glDeleteShader(vs);
-//	glDeleteShader(fs);
-//	//glDeleteProgram(program);
-//}
-//
-//
-//unsigned int Engine::Shader::create(const std::string &vertexShader, const std::string &fragmentShader)
-//{
-//	unsigned int program = glCreateProgram();
-//	unsigned int vs = compile(GL_VERTEX_SHADER, vertexShader);
-//	unsigned int fs = compile(GL_FRAGMENT_SHADER, fragmentShader);
-//
-//	glAttachShader(program, vs);
-//	glAttachShader(program, fs);
-//	glLinkProgram(program);
-//	glValidateProgram(program);
-//
-//	return program;
-//}

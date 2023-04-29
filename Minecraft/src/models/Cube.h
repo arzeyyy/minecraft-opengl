@@ -6,7 +6,7 @@
 class Cube
 {
 public:
-    std::vector<unsigned int> indices;
+    std::vector<GLuint> indices;
 
     std::vector<Vertex> vertices = {
         // Position                         // Color                            // TexCoords                // Normals
@@ -54,7 +54,7 @@ public:
     };
 
     Cube() {
-        indices.push_back(1);
+        indices.empty();
     }
 
 private:

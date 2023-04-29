@@ -27,8 +27,11 @@ void Mesh::SetBuffers()
 
     glBufferData(GL_ARRAY_BUFFER, m_vertices.size() * sizeof(Vertex), &m_vertices[0], GL_STATIC_DRAW);
 
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indices.size() * sizeof(unsigned int), &m_indices[0], GL_STATIC_DRAW);
+    if (!m_indices.empty())
+    {
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indices.size() * sizeof(unsigned int), &m_indices[0], GL_STATIC_DRAW);
+    }
 
     // vertex positions
     glEnableVertexAttribArray(0);
@@ -39,7 +42,6 @@ void Mesh::SetBuffers()
     //   - stride: size of a vertex in bytes (float x, y z, stride = 12).
     //   - pointer: the offset (in bytes) of the component from start of a buffer (position is first that's why 0).
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void *)0);
-
 
     // vertex normals
     glEnableVertexAttribArray(1);
@@ -72,7 +74,7 @@ void Mesh::Draw(Engine::Shader *shader)
     // draw
     glBindVertexArray(VAO);
     if(m_indices.empty())
-        glDrawArrays(GL_TRIANGLES, 0, static_cast<unsigned int>(m_indices.size()));
+        glDrawArrays(GL_TRIANGLES, 0, m_vertices.size());
     else
         glDrawElements(GL_TRIANGLES, static_cast<unsigned int>(m_indices.size()), GL_UNSIGNED_INT, 0);
 
