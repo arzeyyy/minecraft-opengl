@@ -5,25 +5,26 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
+
 namespace Engine
 {
-	class Window
+	class Window 
 	{
 	private:
+
+
+	public:
+		GLFWwindow *m_handle;
+
 		int m_width;
 		int m_height;
 
-	public:
 		Window(int screen_width, int screen_height);
 		int init();
 		void wireframe(bool is_wireframe);
 
-
-		GLFWwindow *m_handle;
 	};
 }
-
-
 
 #endif // !GAME_H
 

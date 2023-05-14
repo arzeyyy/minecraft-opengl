@@ -10,31 +10,37 @@
 #include <vector>
 
 #include "Window.h"
-#include "Shader.h"
+#include "shaders/Shader.h"
 #include "Texture.h"
-#include "VBO.h"
-#include "VAO.h"
-#include "EBO.h"
 
+#include "Model.h"
+#include "Camera.h"
 #include "models/Cube.h"
+#include "Input.h"
+
+
+#define SCREEN_WIDTH 1280
+#define SCREEN_HEIGHT 720
+
+enum AssetID
+{
+	GRASS_BLOCK,
+};
 
 class Game
 {
 private:
 	Engine::Window m_window;
-	Engine::VBO m_vbo;
-	Engine::VAO m_vao;
-	Engine::EBO m_ebo;
+	Engine::Shader m_shader;
+	Cube cube;
 
-	//Engine::Shader *m_shader;
-	Engine::Texture *m_texture;
+	float xRotation;
+	float yRotation;
 
 public:
 	Game();
-	void init();
 	void run();
 };
-
 
 #endif // !GAME_H
 

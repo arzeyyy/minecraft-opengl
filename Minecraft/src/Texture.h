@@ -23,15 +23,14 @@ namespace Engine
 		//Texture(const char *path, GLint type, GLint mmLevel = 0);
 		////void set(const char *path, GLint type, GLint mmLevel = 0);
 		//void bind(GLint type);
-		Texture(const char *path, const char *name, GLenum target);
-		bool load();
+		Texture(GLuint id, GLenum target = GL_TEXTURE_2D);
+		bool loadFromFile(const char *path);
 		void bind();
 		void free();
 
 
 		GLuint m_id;
 		const char *m_path;
-		const char *m_name;
 	};
 }
 

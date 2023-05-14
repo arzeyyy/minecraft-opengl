@@ -137,29 +137,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Model.cpp" />
-    <ClCompile Include="src\EBO.cpp" />
+    <ClCompile Include="src\Input.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\not_used\EBO.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Mesh.cpp" />
-    <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Model.cpp" />
+    <ClCompile Include="src\shaders\Shader.cpp" />
     <ClCompile Include="src\Texture.cpp" />
-    <ClCompile Include="src\VAO.cpp" />
-    <ClCompile Include="src\VBO.cpp" />
+    <ClCompile Include="src\not_used\VAO.cpp" />
+    <ClCompile Include="src\not_used\VBO.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Model.h" />
-    <ClInclude Include="src\EBO.h" />
-    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Input.h" />
+    <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\Mesh.h" />
+    <ClInclude Include="src\not_used\EBO.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Model.h" />
     <ClInclude Include="src\models\Cube.h" />
-    <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\shaders\Shader.h" />
     <ClInclude Include="src\stb_image.h" />
     <ClInclude Include="src\Texture.h" />
-    <ClInclude Include="src\VAO.h" />
-    <ClInclude Include="src\VBO.h" />
-    <ClInclude Include="src\Vertex.h" />
+    <ClInclude Include="src\not_used\VAO.h" />
+    <ClInclude Include="src\not_used\VBO.h" />
+    <ClInclude Include="src\Transform.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,6 +1,11 @@
 #include "Shader.h"
 
-Engine::Shader::Shader(const char *vertexPath, const char *fragmentPath)
+Engine::Shader::Shader() 
+{
+    ID = 0;
+}
+
+bool Engine::Shader::loadFromFile(const char *vertexPath, const char *fragmentPath)
 {
     // 1. retrieve the vertex/fragment source code from filePath
     std::string vertexCode;
@@ -19,7 +24,7 @@ Engine::Shader::Shader(const char *vertexPath, const char *fragmentPath)
         vShaderFile.open(vertexPath);
         fShaderFile.open(fragmentPath);
 
-        if(!vShaderFile.is_open())
+        if (!vShaderFile.is_open())
             std::cout << "ERROR::SHADER::VERTEX_SHADER_NOT_SUCCESSFULLY_OPEN: " << std::endl;
         if (!fShaderFile.is_open())
             std::cout << "ERROR::SHADER::FRAGMENT_SHADER_NOT_SUCCESSFULLY_OPEN: " << std::endl;
@@ -68,17 +73,14 @@ Engine::Shader::Shader(const char *vertexPath, const char *fragmentPath)
     // delete the shaders as they're linked into our program now and no longer necessary
     glDeleteShader(vertex);
     glDeleteShader(fragment);
+
+    return false;
 }
 // activate the shader
 // ------------------------------------------------------------------------
 void Engine::Shader::use()
 {
     glUseProgram(ID);
-    // update shader uniform
-    //double  timeValue = glfwGetTime();
-    //float greenValue = static_cast<float>(sin(timeValue) / 2.0 + 0.5);
-    //int vertexColorLocation = glGetUniformLocation(ID, "ourColor");
-    //glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 }
 // utility uniform functions
 // ------------------------------------------------------------------------

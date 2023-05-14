@@ -14,7 +14,6 @@ int main(void)
 
     Game game;
 
-
     if (glewInit() != GLEW_OK)
     {
         std::cout << "Failed to init glew" << std::endl;
@@ -23,7 +22,6 @@ int main(void)
     std::cout << glGetString(GL_VERSION) << std::endl;
 
 
-    game.init();
     game.run();
 
     glfwTerminate();

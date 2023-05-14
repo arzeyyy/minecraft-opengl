@@ -4,26 +4,26 @@
 #include "Texture.h"
 
 
-Engine::Texture::Texture(const char *path, const char *name, GLenum target)
+Engine::Texture::Texture(GLuint id, GLenum target)
 {
 	m_data = 0;
-	m_id = 0;
-	m_path = path;
-	m_name = name;
+	m_id = id;
 	m_target = target;
 }
 
-bool Engine::Texture::load()
+bool Engine::Texture::loadFromFile(const char *path)
 {
-	stbi_set_flip_vertically_on_load(1);
+	m_path = path;
+
+	stbi_set_flip_vertically_on_load(0);
 
 	int width = 0, height = 0, bpp = 0;
 
-	unsigned char *data = stbi_load(m_path, &width, &height, &bpp, 0);
+	unsigned char *data = stbi_load(path, &width, &height, &bpp, 0);
 
 	if (!data)
 	{
-		std::cout << "Can't load data from" << m_path << stbi_failure_reason() << std::endl;
+		std::cout << "Can't load data from" << path << stbi_failure_reason() << std::endl;
 		exit(0);
 	}
 
@@ -55,8 +55,3 @@ void Engine::Texture::bind()
 {
 	glBindTexture(m_target, m_id);
 }
-//
-//void Engine::Texture::free()
-//{
-//	stbi_image_free(data);
-//}

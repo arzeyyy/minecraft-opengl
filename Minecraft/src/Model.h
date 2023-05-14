@@ -3,33 +3,41 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-
+#include <iostream>
 #include <vector>
 
+#include "shaders/Shader.h"
+#include "Texture.h"
 #include "Mesh.h"
-#include "Shader.h"
+#include "Transform.h"
+
 
 
 class Model
 {
 private:
+	void SetBuffers();
+	void InitTransform();
+	void UpdateUniforms(Engine::Shader *shader);
 
 public:
-	std::vector<Mesh> m_meshes;
+	// trasnforms
+	Transform transform;
+	glm::mat4 m_modelMat;
 
+	// render data
+	unsigned int VAO, VBO, EBO;
 
-	Model();
-	void Init();
-	void Draw(Engine::Shader shader);
+	// mesh data
+	std::vector<Vertex> m_vertices;
+	std::vector<unsigned int> m_indices;
+
+	Model(std::vector<Vertex> &vertices, std::vector<unsigned int> &indices);
+	void Draw(Engine::Shader *shader);
+	void SetTexture(Engine::Texture &texture);
 	void Destroy();
 };
 
-
-#endif // !MODEL_H
-
-
-
-
+#endif // !MODE_H

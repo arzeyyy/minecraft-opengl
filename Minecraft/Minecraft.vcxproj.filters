@@ -21,16 +21,16 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Shader.cpp">
+    <ClCompile Include="src\shaders\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\VBO.cpp">
+    <ClCompile Include="src\not_used\VBO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\VAO.cpp">
+    <ClCompile Include="src\not_used\VAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\EBO.cpp">
+    <ClCompile Include="src\not_used\EBO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Texture.cpp">
@@ -42,24 +42,27 @@
     <ClCompile Include="src\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Mesh.cpp">
+    <ClCompile Include="src\Model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Model.cpp">
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Shader.h">
+    <ClInclude Include="src\shaders\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\VBO.h">
+    <ClInclude Include="src\not_used\VBO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\VAO.h">
+    <ClInclude Include="src\not_used\VAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\EBO.h">
+    <ClInclude Include="src\not_used\EBO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\stb_image.h">
@@ -68,22 +71,28 @@
     <ClInclude Include="src\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vertex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Mesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\models\Cube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
