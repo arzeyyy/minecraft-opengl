@@ -22,6 +22,7 @@ namespace Engine
 
 		glm::mat4 m_view = glm::mat4(1.0f);
 		glm::mat4 m_projection = glm::mat4(1.0f);
+		glm::vec3 m_worldUp;
 
 		void UpdateUniforms(Engine::Shader *shader);
 
@@ -39,7 +40,7 @@ namespace Engine
 		float farClipPlane;
 
 		float fieldOfView;
-		float sensitivity = 0.000000001f;
+		float sensitivity = 0.1f;
 
 		Camera();
 

@@ -37,9 +37,21 @@ private:
 	float xRotation;
 	float yRotation;
 
+	//double m_mouseX;
+	//double m_mouseY;
+
+	//float m_xoffset;
+	//float m_yoffset;
+	//float m_lastX;
+	//float m_lastY;
+
+	//bool m_firstMouse = true;
+
 public:
 	Game();
 	void run();
+	//void mouse_callback(GLFWwindow *window, double xpos_in, double ypos_in);
+	//void updateMouseEvents();
 };
 
 #endif // !GAME_H
