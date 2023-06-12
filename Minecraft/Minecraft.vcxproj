@@ -137,6 +137,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\Block.cpp" />
     <ClCompile Include="src\math\Quaternion.cpp" />
     <ClCompile Include="src\Input.cpp" />
     <ClCompile Include="src\Camera.cpp" />
@@ -145,12 +147,16 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Model.cpp" />
     <ClCompile Include="src\shaders\Shader.cpp" />
-    <ClCompile Include="src\Texture.cpp" />
+    <ClCompile Include="src\texture\Texture.cpp" />
     <ClCompile Include="src\not_used\VAO.cpp" />
     <ClCompile Include="src\not_used\VBO.cpp" />
     <ClCompile Include="src\Window.cpp" />
+    <ClCompile Include="src\texture\TextureAtlas.cpp" />
+    <ClCompile Include="src\texture\TextureArray.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\Block.h" />
     <ClInclude Include="src\math\Quaternion.h" />
     <ClInclude Include="src\Input.h" />
     <ClInclude Include="src\Camera.h" />
@@ -160,12 +166,14 @@
     <ClInclude Include="src\Model.h" />
     <ClInclude Include="src\models\Cube.h" />
     <ClInclude Include="src\shaders\Shader.h" />
-    <ClInclude Include="src\stb_image.h" />
-    <ClInclude Include="src\Texture.h" />
+    <ClInclude Include="src\texture\stb_image.h" />
+    <ClInclude Include="src\texture\Texture.h" />
     <ClInclude Include="src\not_used\VAO.h" />
     <ClInclude Include="src\not_used\VBO.h" />
     <ClInclude Include="src\Transform.h" />
     <ClInclude Include="src\Window.h" />
+    <ClInclude Include="src\texture\TextureAtlas.h" />
+    <ClInclude Include="src\texture\TextureArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 
+#include "Entity.h"
 #include "Window.h"
 #include "Transform.h"
 #include "shaders/Shader.h"
@@ -15,26 +16,21 @@
 
 namespace Engine 
 {
-	class Camera
+	class Camera //: public Entity
 	{
 	private:
 		Window *m_window;
 
 		glm::mat4 m_view = glm::mat4(1.0f);
 		glm::mat4 m_projection = glm::mat4(1.0f);
-		glm::vec3 m_worldUp;
+
+		float m_pitch;
+		float m_yaw;
 
 		void UpdateUniforms(Engine::Shader *shader);
 
-		float pitch;
-		float yaw;
-		float mouseX;
-
-
 	public:
 		Transform transform;
-
-		glm::vec3 orientation = glm::vec3(0.f, 0.f, -1.f);
 
 		float nearClipPlane;
 		float farClipPlane;
@@ -43,14 +39,12 @@ namespace Engine
 		float sensitivity = 0.1f;
 
 		Camera();
-
 		void Create(Engine::Window *window);
 		void Update(Engine::Shader *shader, float deltaTime);
 		void Rotate(float xoffset, float yoffset);
 
 	};
 }
-
 
 #endif // !CAMERA_H
 

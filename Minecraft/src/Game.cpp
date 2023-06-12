@@ -21,13 +21,12 @@ void Game::run()
 {
     glfwSetInputMode(m_window.m_handle, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(m_window.m_handle, mouse_callback);
-    //updateMouseEvents();
 
     m_shader.loadFromFile("shaders/6.3.coordinate_systems.vs", "shaders/6.3.coordinate_systems.fs");
 
     Engine::Texture m_grass(GRASS_BLOCK);
-    if (!m_grass.loadFromFile("assets/textures/block/grass_block_side.png"))
-        std::cout << "failed to load a texture" << m_grass.m_path << std::endl;
+    if (!m_grass.loadFromFile("res/textures/block/grass_side.png"))
+        std::cout << "failed to load a texture" << m_grass.getPath() << std::endl;
 
 
     Model mesh(cube.vertices1, cube.indices);

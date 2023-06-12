@@ -9,11 +9,9 @@
 #include <vector>
 
 #include "shaders/Shader.h"
-#include "Texture.h"
+#include "texture/Texture.h"
 #include "Mesh.h"
 #include "Transform.h"
-
-
 
 class Model
 {

@@ -33,7 +33,7 @@
     <ClCompile Include="src\not_used\EBO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Texture.cpp">
+    <ClCompile Include="src\texture\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Game.cpp">
@@ -54,6 +54,18 @@
     <ClCompile Include="src\math\Quaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Block.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\texture\TextureAtlas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\texture\TextureArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shaders\Shader.h">
@@ -68,10 +80,10 @@
     <ClInclude Include="src\not_used\EBO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\stb_image.h">
+    <ClInclude Include="src\texture\stb_image.h">
       <Filter>Header Files\lib</Filter>
     </ClInclude>
-    <ClInclude Include="src\Texture.h">
+    <ClInclude Include="src\texture\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Game.h">
@@ -99,6 +111,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\math\Quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Block.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\texture\TextureAtlas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\texture\TextureArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

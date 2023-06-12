@@ -1,14 +1,11 @@
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
 
 #include "Texture.h"
 
-
 Engine::Texture::Texture(GLuint id, GLenum target)
+	: m_data(0), m_path(0), m_id(id), m_target(target)
+	, m_width(0), m_height(0), m_bpp(0)
 {
-	m_data = 0;
-	m_id = id;
-	m_target = target;
 }
 
 bool Engine::Texture::loadFromFile(const char *path)
@@ -17,9 +14,8 @@ bool Engine::Texture::loadFromFile(const char *path)
 
 	stbi_set_flip_vertically_on_load(0);
 
-	int width = 0, height = 0, bpp = 0;
 
-	unsigned char *data = stbi_load(path, &width, &height, &bpp, 0);
+	unsigned char *data = stbi_load(path, &m_width, &m_height, &m_bpp, 0);
 
 	if (!data)
 	{
@@ -27,12 +23,12 @@ bool Engine::Texture::loadFromFile(const char *path)
 		exit(0);
 	}
 
-	std::cout << "width: " << width << " height: " << height << " bits per pixel: " << bpp << std::endl;
+	std::cout << "width: " << m_width << " height: " << m_height << " bits per pixel: " << m_bpp << std::endl;
 
 	glGenBuffers(1, &m_id);
 	glBindTexture(m_target, m_id);
 	if(m_target == GL_TEXTURE_2D){
-		glTexImage2D(m_target, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+		glTexImage2D(m_target, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 	} else{
 		std::cout << "support for the texture target " << m_target << "is not implemented" << std::endl;
 		exit(1);
@@ -54,4 +50,29 @@ bool Engine::Texture::loadFromFile(const char *path)
 void Engine::Texture::bind()
 {
 	glBindTexture(m_target, m_id);
+}
+
+int Engine::Texture::getWidth()
+{
+	return m_width;
+}
+
+int Engine::Texture::getHeight()
+{
+	return m_height;
+}
+
+const void *Engine::Texture::getData() const
+{
+	return m_data;
+}
+
+GLuint Engine::Texture::getID() 
+{
+	return m_id;
+}
+
+const char Engine::Texture::getPath() 
+{
+	return *m_path;
 }
