@@ -11,9 +11,11 @@ namespace Engine
 	class TextureArray
 	{
 	public:
-		TextureArray(GLenum target);
+		TextureArray(GLenum target, int width, int height);
 
 		bool loadFromFiles(const std::vector<const char *> &paths);
+		void generateMipmaps();
+		void generate(int width, int height);
 		void bind() const;
 		void unbind() const;
 	
@@ -21,6 +23,7 @@ namespace Engine
 		GLuint m_id;
 		GLenum m_target;
 		int m_layerCount;
+		int m_width, m_height;
 	};
 };
 

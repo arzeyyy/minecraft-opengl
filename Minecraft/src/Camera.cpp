@@ -28,6 +28,7 @@ void Engine::Camera::Rotate(float xoffset, float yoffset)
 	// Movement
 	m_yaw -= -xoffset * sensitivity;
 	m_pitch += yoffset * sensitivity;
+
 	std::cout << "x: " << xoffset << std::endl;
 	std::cout << "y: " << yoffset << std::endl;
 
